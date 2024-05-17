@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pesan;
+use App\Models\Pesan;
 use Illuminate\Http\Request;
 
 class MeController extends Controller
