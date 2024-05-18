@@ -19,7 +19,7 @@
             <div class="col bg-light">
                 <div class="text-center">
                     <div>
-                        <a href="/" class="logo"><img src="assets/img/logo-dark.png" height="20" alt="logo"></a>
+                        <a href="/blog" class="logo"><img src="assets/img/logo-dark.png" height="20" alt="logo"></a>
                     </div>
 
                     <h4 class="mt-3 font-size-18">Lock screen</h4>

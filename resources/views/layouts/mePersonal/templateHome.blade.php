@@ -11,7 +11,7 @@
         <title><?= $data["title"] ?></title>
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href=" {{ asset("/img/favicon.png") }}" type="image/x-icon" />
+        <link rel="shortcut icon" href=" {{ asset("/assets/img/favicon.png") }}" type="image/x-icon" />
 
         <!-- font awesome cdn link  -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">

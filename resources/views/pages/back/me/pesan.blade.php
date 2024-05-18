@@ -35,8 +35,8 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>From</th>
                         <th>Note</th>
+                        <th>From</th>
                         <th>Date</th>
                         <th>Action</th>
                     </tr>

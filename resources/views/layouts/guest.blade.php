@@ -20,7 +20,7 @@
 
     <body class="auth-body-bg">
         <div class="home-btn d-none d-sm-block">
-            <a href="/"><i class="text-white mdi mdi-home-variant h2"></i></a>
+            <a href="/blog"><i class="text-white mdi mdi-home-variant h2"></i></a>
         </div>
 
         <div class="p-0 container-fluid bg-secondary">
