@@ -69,20 +69,18 @@
             </li>
         @endif
 
+        <li class="menu-title">Management</li>
+        <li>
+            <a href="{{ route("admin.notifications") }}" class=" waves-effect">
+                <i class="ri-notification-badge-line"></i>
+                <span>Notifications</span>
+            </a>
+        </li>
         @if (Auth::user()->role == "admin")
-            <li class="menu-title">Management</li>
-
             <li>
                 <a href="{{ route("admin.users.index") }}" class=" waves-effect">
                     <i class="ri-folder-user-line"></i>
                     <span>Users Management</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="{{ route("admin.indexPesan") }}" class=" waves-effect">
-                    <i class="ri-chat-heart-line"></i>
-                    <span>Pesan</span>
                 </a>
             </li>
 

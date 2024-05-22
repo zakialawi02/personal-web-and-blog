@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MeController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ArticleViewController;
 use App\Http\Controllers\CommentsController;
-use App\Http\Controllers\MeController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\TagController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\ArticleViewController;
+use App\Http\Controllers\MentionNotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,6 +100,11 @@ Route::prefix('admin')->as('admin.')->group(function () {
 
         Route::delete('/comments/{comment:id}', [CommentsController::class, 'destroy'])->name('comment.destroy');
         Route::post('/comments/{post:slug}', [CommentsController::class, 'store'])->name('comment.store');
+
+
+        Route::get('/notifications', [MentionNotificationController::class, 'index'])->name('notifications');
+        Route::get('/get-notifications', [MentionNotificationController::class, 'getNotifications'])->name('getNotifications');
+        Route::put('/mark-as-read-all', [MentionNotificationController::class, 'markAsReadAll'])->name('markAsReadAll');
     });
 });
 

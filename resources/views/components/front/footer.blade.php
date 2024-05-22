@@ -29,7 +29,7 @@
                         <h5 class="text-2xl font-bold ">About</h5>
                         <div class="space-y-1 text-dark">
                             <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">About</a>
+                                <a href="/#about" class="text-lg transition-all duration-300 hover:text-primary">About</a>
                             </div>
                             <div>
                                 <a href="#" class="text-lg transition-all duration-300 hover:text-primary">Career</a>
@@ -47,19 +47,16 @@
                         <h5 class="text-2xl font-bold ">Blog</h5>
                         <div class="space-y-1 text-dark">
                             <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">Menu 1</a>
+                                <a href="https://zakialawi.my.id/blog/categories/technology" class="text-lg transition-all duration-300 hover:text-primary">Technology</a>
                             </div>
                             <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">Menu 2</a>
+                                <a href="https://zakialawi.my.id/blog/categories/web-programming" class="text-lg transition-all duration-300 hover:text-primary">Web Programming</a>
                             </div>
                             <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">Menu 3</a>
+                                <a href="https://zakialawi.my.id/blog/categories/tutorial" class="text-lg transition-all duration-300 hover:text-primary">Tutorial</a>
                             </div>
                             <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">Menu 4</a>
-                            </div>
-                            <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">Menu 5</a>
+                                <a href="https://zakialawi.my.id/blog/users/zakialawi" class="text-lg transition-all duration-300 hover:text-primary">By Zakialawi</a>
                             </div>
                         </div>
                     </div>
