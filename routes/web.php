@@ -10,6 +10,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ArticleViewController;
@@ -57,18 +58,6 @@ Route::prefix('admin')->as('admin.')->group(function () {
     Route::middleware(['auth', 'verified', 'role:admin,writer'])->group(function () {
         Route::get('/my-files', [PostController::class, 'myFilesManager'])->name('myfiles');
 
-
-        Route::get('/pages/{id}/load-project', [PageController::class, 'loadProject'])->name('pages.loadproject');
-        Route::patch('/pages/{id}/store-project', [PageController::class, 'storeProject'])->name('pages.storeproject');
-        Route::get('/pages', [PageController::class, 'index'])->name('pages.index');
-        Route::post('/pages', [PageController::class, 'store'])->name('pages.store');
-        Route::get('/pages/create', [PageController::class, 'create'])->name('pages.create');
-        Route::get('/pages/{page:id}/edit', [PageController::class, 'edit'])->name('pages.edit');
-        Route::get('/pages/{page:id}/builder', [PageController::class, 'builder'])->name('pages.builder');
-        Route::put('/pages/{page:id}', [PageController::class, 'update'])->name('pages.update');
-        Route::delete('/pages/{page:id}', [PageController::class, 'destroy'])->name('pages.destroy');
-
-
         Route::post('/posts/generateSlug', [PostController::class, 'generateSlug'])->name('posts.generateSlug');
         Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
         Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
@@ -100,6 +89,18 @@ Route::prefix('admin')->as('admin.')->group(function () {
 
         Route::get('/newsletter', [NewsletterController::class, 'index'])->name('newsletter.index');
         Route::delete('/newsletter/{newsletter:email}', [NewsletterController::class, 'destroy'])->name('newsletter.destroy');
+
+        Route::get('/pages/{id}/load-project', [PageController::class, 'loadProject'])->name('pages.loadproject');
+        Route::patch('/pages/{id}/store-project', [PageController::class, 'storeProject'])->name('pages.storeproject');
+        Route::get('/pages', [PageController::class, 'index'])->name('pages.index');
+        Route::post('/pages', [PageController::class, 'store'])->name('pages.store');
+        Route::get('/pages/create', [PageController::class, 'create'])->name('pages.create');
+        Route::get('/pages/{page:id}/edit', [PageController::class, 'edit'])->name('pages.edit');
+        Route::get('/pages/{page:id}/builder', [PageController::class, 'builder'])->name('pages.builder');
+        Route::put('/pages/{page:id}', [PageController::class, 'update'])->name('pages.update');
+        Route::delete('/pages/{page:id}', [PageController::class, 'destroy'])->name('pages.destroy');
+
+        Route::resource('menu-items', MenuItemController::class);
     });
 
     // route auth all
@@ -158,9 +159,6 @@ Route::get('privacy-policy', function () {
 Route::get('terms-and-conditions', function () {
     return view('pages.front.termCondition');
 })->name('termsAndConditions');
-Route::get('contact-me', function () {
-    return view('pages.front.contact');
-})->name('contactMe');
 
 
 Route::post('/show-comment/{post:slug}', [CommentsController::class, 'showArticleComment'])->name('showArticleComment');

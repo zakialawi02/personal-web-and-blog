@@ -25,41 +25,33 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col gap-5">
-                        <h5 class="text-2xl font-bold ">About</h5>
-                        <div class="space-y-1 text-dark">
-                            <div>
-                                <a href="/#about" class="text-lg transition-all duration-300 hover:text-primary">About</a>
-                            </div>
-                            <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">Career</a>
-                            </div>
-                            <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">History</a>
-                            </div>
-                            <div>
-                                <a href="#" class="text-lg transition-all duration-300 hover:text-primary">Team</a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="flex flex-col gap-5">
-                        <h5 class="text-2xl font-bold ">Blog</h5>
-                        <div class="space-y-1 text-dark">
-                            <div>
-                                <a href="https://zakialawi.my.id/blog/categories/technology" class="text-lg transition-all duration-300 hover:text-primary">Technology</a>
-                            </div>
-                            <div>
-                                <a href="https://zakialawi.my.id/blog/categories/web-programming" class="text-lg transition-all duration-300 hover:text-primary">Web Programming</a>
-                            </div>
-                            <div>
-                                <a href="https://zakialawi.my.id/blog/categories/tutorial" class="text-lg transition-all duration-300 hover:text-primary">Tutorial</a>
-                            </div>
-                            <div>
-                                <a href="https://zakialawi.my.id/blog/users/zakialawi" class="text-lg transition-all duration-300 hover:text-primary">By Zakialawi</a>
+                    @if (\App\Models\MenuItem::where("class", "footer-a")->exists())
+                        <div class="flex flex-col gap-5">
+                            <h5 class="text-2xl font-bold ">About</h5>
+                            <div class="space-y-1 text-dark">
+                                @foreach (\App\Models\MenuItem::where("class", "footer-a")->orderBy("order")->get() as $menuItem)
+                                    <div>
+                                        <a href="{{ $menuItem->url }}" class="text-lg transition-all duration-300 hover:text-primary">{{ $menuItem->name }}</a>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
-                    </div>
+                    @endif
+
+                    @if (\App\Models\MenuItem::where("class", "footer-b")->exists())
+                        <div class="flex flex-col gap-5">
+                            <h5 class="text-2xl font-bold ">Blog</h5>
+                            <div class="space-y-1 text-dark">
+                                @foreach (\App\Models\MenuItem::where("class", "footer-b")->orderBy("order")->get() as $menuItem)
+                                    <div>
+                                        <a href="{{ $menuItem->url }}" class="text-lg transition-all duration-300 hover:text-primary">{{ $menuItem->name }}</a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
+
 
                     <div class="md:col-span-2">
                         <div class="flex flex-col">
